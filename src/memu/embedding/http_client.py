@@ -8,6 +8,7 @@ import httpx
 
 from memu.embedding.backends.base import EmbeddingBackend
 from memu.embedding.backends.doubao import DoubaoEmbeddingBackend, DoubaoMultimodalEmbeddingInput
+from memu.embedding.backends.gemini import GeminiEmbeddingBackend
 from memu.embedding.backends.openai import OpenAIEmbeddingBackend
 
 logger = logging.getLogger(__name__)
@@ -15,6 +16,7 @@ logger = logging.getLogger(__name__)
 EMBEDDING_BACKENDS: dict[str, Callable[[], EmbeddingBackend]] = {
     OpenAIEmbeddingBackend.name: OpenAIEmbeddingBackend,
     DoubaoEmbeddingBackend.name: DoubaoEmbeddingBackend,
+    GeminiEmbeddingBackend.name: GeminiEmbeddingBackend,
 }
 
 
